@@ -3,7 +3,7 @@
     <v-col class="text-center">
       <img
         src="/v.png"
-        alt="Vuetify.js"
+        alt="Crypto Dashboard"
         class="mb-5"
       >
       <blockquote class="blockquote">
