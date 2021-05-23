@@ -6,11 +6,15 @@
       :clipped="clipped"
       fixed
       app
-
-      temporary
+      permanent
+      expand-on-hover
     >
       <v-list >
-        <v-icon @click.stop="drawer = !drawer"  x-large >mdi-close-box</v-icon>
+        <!-- <v-icon @click.stop="drawer = !drawer"  x-large >mdi-close-box</v-icon> -->
+        <v-row class="ml-2 my-2">
+      <v-img src="/logo.png" contain  max-height="40" max-width="40"  />
+      <!-- <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold d-xs-none d-sm-none " /> -->
+      </v-row>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -32,9 +36,7 @@
       fixed
       app
     >
-      <v-img @click.stop="drawer = !drawer" src="/logo.png" contain  max-height="40"
-  max-width="40" class="mx-auto" />
-      <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold"/>
+      <!-- <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold"/> --> 
       <v-spacer />
       <v-btn
         icon
@@ -62,7 +64,7 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
+      fixed: true,
       dialog: false,
       items: [
         {
