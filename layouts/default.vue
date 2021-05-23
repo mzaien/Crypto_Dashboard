@@ -6,8 +6,11 @@
       :clipped="clipped"
       fixed
       app
+
+      temporary
     >
-      <v-list>
+      <v-list >
+        <v-icon @click.stop="drawer = !drawer"  x-large >mdi-close-box</v-icon>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -60,6 +63,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      dialog: false,
       items: [
         {
           icon: 'mdi-apps',
