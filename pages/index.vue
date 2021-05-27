@@ -6,7 +6,7 @@
         <v-card-title class="headline">
           Welcome to the Crypto Dashboard
         </v-card-title>
-  <v-autocomplete
+        <v-autocomplete
       v-model="coins"
       :disabled="isUpdating"
       :items="coin"
