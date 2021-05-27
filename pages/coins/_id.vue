@@ -1,3 +1,4 @@
+
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
@@ -76,7 +77,7 @@
   </v-row>
 </template>
 
-<script>
+<script >
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
@@ -84,6 +85,12 @@ export default {
   components: {
     Logo,
     VuetifyLogo
-  }
+  },
+      //   mounted() {
+      //   console.log( this.$route.params);
+      // },
+    head:{
+    title:"coin page"
+    },
 }
 </script>
