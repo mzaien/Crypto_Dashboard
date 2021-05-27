@@ -8,8 +8,7 @@ export default {
     target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Crypto_Dashboard',
-    title: 'Crypto_Dashboard',
+    titleTemplate: '%s - Crypto Dashboard',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
