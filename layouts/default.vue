@@ -12,7 +12,9 @@
       <v-list >
         <!-- <v-icon @click.stop="drawer = !drawer"  x-large >mdi-close-box</v-icon> -->
         <v-row class="ml-2 my-2">
-      <v-img src="/logo.png" contain  max-height="40" max-width="40"  />
+       <router-link to="/">
+        <v-img src="/logo.png" contain  max-height="40" max-width="40"/>
+      </router-link>
       <!-- <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold d-xs-none d-sm-none " /> -->
       </v-row>
         <v-list-item
@@ -36,17 +38,10 @@
       fixed
       app
     >
-      <!-- <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold"/> --> 
-      <v-spacer />
-      <v-btn
-        icon
-      >
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
-        <nuxt />
+        <nuxt keep-alive :keep-alive-props="{ max: 50 }"/>
       </v-container>
     </v-main>
     <v-footer
@@ -68,12 +63,7 @@ export default {
       dialog: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-calculator-variant',
           title: 'Exchange currencies',
           to: '/exchange'
         }
@@ -81,7 +71,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Crypto Dashboard'
+      title: 'Crypto Dashboard',
     }
   }
 }
