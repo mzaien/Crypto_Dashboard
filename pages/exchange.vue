@@ -122,7 +122,6 @@
     <v-col >
       <v-card class="mx-4">
      <v-text-field
-     :rules="[rules.num]"
       label="Crypto currancy"
       hide-details="auto"
        outlined
@@ -168,12 +167,6 @@ export default Vue.extend({
       exCP:Object,
       exPP:[],
       isUpdating: false,
-      rules: {
-          num: function(value:any) {
-                  const pattern=/^[0-9]$/
-                  return pattern.test(value)||'Add Only numbers'
-                }
-              }
     }),
         methods: {
     updateScc(value:any) {
