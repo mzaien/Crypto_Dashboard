@@ -1,8 +1,15 @@
 <template>
     <v-card class="text-center" >
       <h2>
-        Exchange {{selectedcc}} with {{selectedpc}}
+        Exchange {{ccvalue}} {{selectedcc}} to {{selectedpc}}
       </h2>
+          <div class="my-4">
+          <h4 v-if="ccvalue!==0 ||exCP!==[] " >
+          <p v-for="(exC,id) in exCP" :key="id">
+        Equals =  {{result= ccvalue* Object.values(exC)[4]}} {{selectedpc}}
+          </p>
+      </h4>
+      </div>
   <v-row>
     <v-col class="text-center">
         <v-autocomplete
@@ -129,7 +136,7 @@
     ></v-text-field>
       </v-card>
     </v-col>
-    <v-col class="mx-4">
+    <!-- <v-col class="mx-4">
       <v-card >
       <v-text-field
       v-model="result"
@@ -140,12 +147,13 @@
     >
     </v-text-field>
       </v-card>
-    </v-col>
+    </v-col> -->
   </v-row>
     <button v-if="selectedcc ==='' || selectedpc ===''"  disabled >Choose currencies</button>
     <button v-else-if="ccvalue===0 "  disabled >Fill the amount</button>
-    <button v-else @click="()=>{$fetch(); calcresult(ccvalue,exCP)}" >Calculate</button>
+    <button v-else @click="()=>{$fetch()}" >Calculate</button>
       </v-card>
+
 </template>
 <script lang="ts">
 import Vue from 'vue'
@@ -164,7 +172,7 @@ export default Vue.extend({
       selectedcc:'',
       ccvalue:0,
       result:0,
-      exCP:Object,
+      exCP:[],
       exPP:[],
       isUpdating: false,
     }),
@@ -180,15 +188,9 @@ export default Vue.extend({
     setvalue(value:number) {
       console.log(value)
       if (value >0) this.ccvalue =value;
-    },
-    calcresult(value1:number,value2:Object) {
-      console.log(value2)
-      // console.log(Object.values(value2)
-      // const exchange= Object.values(value2[4];
-       this.result =value1*Object.values(value2)[4];
     }
 },
-     async fetch(): Promise<void> {
+     async fetch(){
       this.exCP = await fetch(
         `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${this.selectedcc}&to_currency=${this.selectedpc}&apikey=${process.env.API_KEY}`
       ).then(res => res.json())
