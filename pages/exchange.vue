@@ -142,7 +142,8 @@
       </v-card>
     </v-col>
   </v-row>
-    <button v-if="selectedcc ==='' || selectedpc ===''||ccvalue==='' "  disabled >Choose currencies</button>
+    <button v-if="selectedcc ==='' || selectedpc ===''"  disabled >Choose currencies</button>
+    <button v-else-if="ccvalue===0 "  disabled >Fill the amount</button>
     <button v-else @click="()=>{$fetch(); calcresult(ccvalue,exCP)}" >Calculate</button>
       </v-card>
 </template>
@@ -161,9 +162,9 @@ export default Vue.extend({
       pcoin: pc,
       selectedpc:'',
       selectedcc:'',
-      ccvalue:'',
+      ccvalue:0,
       result:0,
-      exCP:[],
+      exCP:Object,
       exPP:[],
       isUpdating: false,
       model: null,
@@ -179,15 +180,15 @@ export default Vue.extend({
       console.log(value)
        this.selectedpc =value;
     },
-    setvalue(value:any) {
+    setvalue(value:number) {
       console.log(value)
-       this.ccvalue =value;
+      if (value >0) this.ccvalue =value;
     },
-    calcresult(value1:any,value2:Object) {
-      console.log(Object.values(value2))
+    calcresult(value1:number,value2:Object) {
+      console.log(value2)
       // console.log(Object.values(value2)
       // const exchange= Object.values(value2[4];
-       this.result =Number(value1)*Number(Object.values(value2)[4]);
+       this.result =value1*Object.values(value2)[4];
     }
 },
      async fetch(): Promise<void> {
