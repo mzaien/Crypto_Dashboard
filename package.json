@@ -15,7 +15,6 @@
     "nuxt": "^2.15.6"
   },
   "devDependencies": {
-    "@nuxt/image": "^0.4.12",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/vuetify": "^1.11.3"

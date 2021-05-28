@@ -13,7 +13,7 @@
         <!-- <v-icon @click.stop="drawer = !drawer"  x-large >mdi-close-box</v-icon> -->
         <v-row class="ml-2 my-2">
        <router-link to="/">
-        <nuxt-img src="/logo.png"  sizes="sm:40px md:40px lg:40px" fit="contain"/>
+        <v-img src="/logo.png" contain  max-height="40" max-width="40"/>
       </router-link>
       <!-- <v-toolbar-title v-text="title"  class="mx-4 font-weight-bold d-xs-none d-sm-none " /> -->
       </v-row>

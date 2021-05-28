@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6" align="center">
-       <nuxt-img src="/logoE.png" class="my-6"  quality="100" sizes="sm:50px md:80px lg:100px" fit="contain"  />
+       <v-img src="/logoE.png" contain  max-height="100" max-width="100" class="my-6"/>
       <v-card >
         <v-card-title class="headline">
           Welcome to the Crypto Dashboard
