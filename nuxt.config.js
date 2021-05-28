@@ -36,6 +36,8 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    //nuxt-img
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
